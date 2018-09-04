@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$rootDir/version.gradle"
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId 'com.wada811.babytube'
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode getDateVersionCode()
+        versionName getDateVersionName()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    productFlavors {
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "(debug)"
+            debuggable true
+            zipAlignEnabled true
+            minifyEnabled false
+        }
+        release {
+            debuggable false
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // languages
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // jar (for YouTubeAndroidPlayer)
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // support library
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    // Crashlytics
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
+    // testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+apply plugin: 'com.google.gms.google-services'

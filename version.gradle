@@ -1,0 +1,23 @@
+import java.text.SimpleDateFormat
+
+ext {
+    getDateVersionCode = this.&getDateVersionCode
+    getDateVersionName = this.&getDateVersionName
+}
+
+def getDateVersionCode(){
+    def timezone = TimeZone.getTimeZone("Asia/Tokyo")
+    def formatter = new SimpleDateFormat("yyMMddHHmm")
+    formatter.setTimeZone(timezone)
+    def versionCode = Integer.parseInt(formatter.format(new Date())) as int
+    project.logger.lifecycle "versionCode: " + versionCode
+    return versionCode
+}
+def getDateVersionName(){
+    def timezone = TimeZone.getTimeZone("Asia/Tokyo")
+    def formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm")
+    formatter.setTimeZone(timezone)
+    def versionName = formatter.format(new Date())
+    project.logger.lifecycle "versionName: " + versionName
+    return versionName
+}
