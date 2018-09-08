@@ -207,3 +207,4 @@ Temporary Items
 .idea/
 !app/libs/*.jar
 !app/release/*.apk
+signing/keystore.properties
