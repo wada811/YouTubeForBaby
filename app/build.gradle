@@ -4,11 +4,11 @@ apply from: "$rootDir/version.gradle"
 apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId 'com.wada811.babytube'
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode getDateVersionCode()
         versionName getDateVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -60,7 +60,7 @@ dependencies {
     // jar (for YouTubeAndroidPlayer)
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // support library
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     // Firebase
     implementation 'com.google.firebase:firebase-core:16.0.3'
     // Crashlytics
