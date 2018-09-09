@@ -4,11 +4,11 @@ apply from: "$rootDir/version.gradle"
 apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId 'com.wada811.babytube'
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode getDateVersionCode()
         versionName getDateVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
