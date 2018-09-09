@@ -60,7 +60,7 @@ dependencies {
     // jar (for YouTubeAndroidPlayer)
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // support library
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     // Firebase
     implementation 'com.google.firebase:firebase-core:16.0.3'
     // Crashlytics
